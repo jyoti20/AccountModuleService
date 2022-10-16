@@ -1,5 +1,4 @@
-# AccountModuleService
-# AccountTransfer microservice
+## AccountModuleService
 ## This service is used for transfer money from one account to other.
 ### Project Structure
 
