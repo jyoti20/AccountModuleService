@@ -35,10 +35,9 @@ public class AccountService {
 	/**UpdateBalance
 	* Update given balance for the provided account
 	*/
-	public Account updateBalance(Account account, BigDecimal newBalance) {
+	public void updateBalance(Account account, BigDecimal newBalance) {
 		
-		account.setCurrentBalance(newBalance);
-		return accountRepo.save(account);
+		 accountRepo.updateBalance(account.getAccountNumber(), newBalance);
 		
 	}
 

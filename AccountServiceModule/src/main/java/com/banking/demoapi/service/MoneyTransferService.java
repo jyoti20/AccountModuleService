@@ -92,8 +92,8 @@ public class MoneyTransferService {
 		if(fromAccount.getCurrentBalance().compareTo(transactionAmount) < 0)
 		 throw new NotEnoughBalanceException("Not Enough Balance in account to Transfer ");
 		
-		if(transactionAmount.compareTo(BigDecimal.ZERO) < 0)
-			 throw new NegativeBalanceException("Negative Balance : Invalid Amount ");
+//		if(transactionAmount.compareTo(BigDecimal.ZERO) < 0)
+//			 throw new NegativeBalanceException("Negative Balance : Invalid Amount ");
 	}
 
 
