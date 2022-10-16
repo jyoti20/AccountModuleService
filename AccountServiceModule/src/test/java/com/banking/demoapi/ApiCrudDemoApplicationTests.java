@@ -66,34 +66,31 @@ class ApiCrudDemoApplicationTests {
 		 
 		 Account account1 = new Account();
 		 
-		 account1.setAccountNumber("2002");
+		 account1.setAccountNumber("2444002");
 		 account1.setCurrentBalance(new BigDecimal(2000));
 		    accountService.save(account1);
 	        
 		 System.out.println(account1.getAccountNumber() + ".. craeted");
 	        Account account2 = new Account();
 	       
-	        account2.setAccountNumber("2480052");
-	        account2.setCurrentBalance(new BigDecimal(5000));
+	        account2.setAccountNumber("248044052");
+	        account2.setCurrentBalance(new BigDecimal(1000));
 		        accountService.save(account2);
 	        
 	        TransferRequest transferRequest = new TransferRequest();
 	        
-	        transferRequest.setFromAccount(null);
-	        transferRequest.setFromAccount(null);
+	        transferRequest.setFromAccount(account1);
+	        transferRequest.setToAccount(account2);
 	        transferRequest.setTransactionAmount(new BigDecimal(500));
 	        
 	        moneyTransferService.processTransaction(transferRequest);
 	       
-//	        System.out.println(account1.getAccountNumber() + ".. transfered from ");
-//	       BigDecimal currBalance = accountService.getAccountStatement(account1.getAccountNumber()).getCurrentBalance();
-//	       System.out.println(currBalance + ".. currBalance ");
-//	        assertEquals(currBalance, new BigDecimal(1500));
+          System.out.println(account1.getAccountNumber() + ".. transfered from ");
+ 	       BigDecimal currBalance = accountService.getAccountStatement(account1.getAccountNumber()).getCurrentBalance();
+ 	       System.out.println(currBalance + ".. currBalance ");
+	        assertEquals(currBalance, new BigDecimal(1500));
 	        
-	        System.out.println(account1.getAccountNumber() + ".. transfered from ");
-		       BigDecimal addedBalance = accountService.getAccountStatement(account2.getAccountNumber()).getCurrentBalance();
-		       System.out.println(addedBalance + ".. addedBalance ");
-		        assertEquals(addedBalance, new BigDecimal(5500));
+
 	 }
 	 
 	 
